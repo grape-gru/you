@@ -1,0 +1,109 @@
+// latest libraries and avaliable upgrades
+sudo apt-get update
+sudo apt-get upgrade -y
+
+// screen savers 1 | 2
+sudo apt-get install xscreensaver
+
+
+sudo apt install xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra
+
+
+// games
+sudo apt install -y minecraft-pi   *minecraft pi-edition (not full game)
+sudo apt-get Widelands	*the settlers
+sudo apt-get SuperTux	*mario side scroller
+sudo apt-get Pingus	*lemmings
+sudo apt-get nethack	*dungeon crawler
+sudo apt-get PrBoom   *doom clone
+sudo apt-get lincity  *simcity
+sudo apt-get tagua    * chess
+sudo apt-get Tetzle   * tetris
+sudo apt-get XBlast-TNT  *bombmerman
+sudo apt install chocolate-doom   **DOOM
+#navigate to usr/games and enter: sudo wget http://www.doomworld.com/3ddownloads/ports/shareware_doom_iwad.zip
+#unzip the file: sudo unzip shareware_doom_iwad.zip
+#then remove since we dont need the zip: rm shareware_doom_iwad.zip
+#now you have doom :)
+sudo apt-get vavoom   * DOOM launcher **needs doom to run
+sudo apt-get TINT     * tetris clone
+sudo apt-get mpuzzles
+sudo apt-get Xtron
+sudo apt-get Micropolis  *simcity
+sudo apt-get Freeciv	*overhead history_civ game
+sudo apt-get Flare      *"  "   "  RPG
+sudo apt-get OpenTTD	* similar to transport tycoon delux
+sudo apt-get Angry Drunken Dwarves  *multiplayer arcade puzzle game
+sudo apt-get freedink  *like zelda
+
+'''
+Download here: https://www.minecraft.net/en-us/edition/pi
+   #Navigate to the download folder: cd [download folder location]
+   #Decompress the file: tar -zxvf minecraft-pi-0.1.1.tar.gz
+   #Navigate to the installation folder: cd mcpi
+   #Run Minecraft: Pi Edition: ./minecraft-pi
+'''
+
+
+
+
+INSTRUCTIONS FOR QUAKE 3:
+
+sudo apt-get install git gcc build-essential libsdl1.2-dev
+
+#obtain source code 
+
+git clone https://github.com/raspberrypi/quake3.git
+
+#change to directory
+
+cd quake3
+
+#now to edit the script in console
+
+nano build.sh
+
+# the first line (8) you are looking for starts ARM_LIBS, if you cannot see it, press Ctrl-W and type ARM_LIBS followed by the return key. Change it so it says this:
+
+ARM_LIBS=/opt/vc/lib
+
+# then change the line (16) that starts INCLUDES, change it to this:
+
+
+INCLUDES="-I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads"
+
+
+# on line (19) to change starts CROSS_COMPILE:
+
+
+#CROSS_COMPILE=bcm2708-
+
+#save by pressing Ctrl-X followed by Y and finally return. Now you can begin the compilation process by typing ./build.sh; the process takes apprx 30 minutes
+
+#then download the pak files... this lets the game function!
+
+enter:
+
+wget http://dl.dropbox.com/u/1816557/Q3%20Demo%20Paks.zip
+
+#**MAKE SURE THEY ARE SAVED TO THE 'baseq3' FOLDER. OTHERWISE THE GAME WONT WORK**
+
+The directory tree should look like this (using the default Pi user):
+
+home
+pi(your pi's name here)
+quake3
+build
+release-linux-arm
+baseq3
+
+#AND THEN IN THE 'baseq3' there should be your PAK files.
+
+#running the game...to run the game you have to be in the right directory.... type this command:
+
+cd /quake3/build/release-linux-arm/
+
+#now you can FINALLY start your game:
+
+sudo ./ioquake3.arm
+
