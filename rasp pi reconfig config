@@ -9,7 +9,10 @@ sudo apt-get install xscreensaver
 sudo apt install xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra
 
 
-// games
+// games 
+** name can be found with an |'apt-cache search GAMENAME' | search, using keywords
+** |'sudo apt-get update && sudo apt-get install GAMENAME' |
+
 sudo apt install -y minecraft-pi   *minecraft pi-edition (not full game)
 sudo apt-get Widelands	*the settlers
 sudo apt-get SuperTux	*mario side scroller
